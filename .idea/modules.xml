@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Sinra-UFJF.iml" filepath="$PROJECT_DIR$/Sinra-UFJF.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sinra.iml" filepath="$PROJECT_DIR$/sinra.iml" />
     </modules>
   </component>
 </project>
