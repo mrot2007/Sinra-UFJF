@@ -19,8 +19,7 @@ public class CustomDrawerAdapter extends ArrayAdapter<DrawerItem> {
       List<DrawerItem> drawerItemList;
       int layoutResID;
  
-      public CustomDrawerAdapter(Context context, int layoutResourceID,
-                  List<DrawerItem> listItems) {
+      public CustomDrawerAdapter(Context context, int layoutResourceID, List<DrawerItem> listItems) {
             super(context, layoutResourceID, listItems);
             this.context = context;
             this.drawerItemList = listItems;
@@ -39,9 +38,9 @@ public class CustomDrawerAdapter extends ArrayAdapter<DrawerItem> {
                   drawerHolder = new DrawerItemHolder();
  
                   view = inflater.inflate(layoutResID, parent, false);
-                  drawerHolder.ItemName = (TextView) view
-                              .findViewById(R.id.drawer_itemName);
+                  drawerHolder.ItemName = (TextView) view.findViewById(R.id.drawer_itemName);
                   drawerHolder.icon = (ImageView) view.findViewById(R.id.drawer_icon);
+                  drawerHolder.counter = (TextView) view.findViewById(R.id.drawer_counter);
  
                   view.setTag(drawerHolder);
  
@@ -52,9 +51,12 @@ public class CustomDrawerAdapter extends ArrayAdapter<DrawerItem> {
  
             DrawerItem dItem = (DrawerItem) this.drawerItemList.get(position);
  
-            drawerHolder.icon.setImageDrawable(view.getResources().getDrawable(
-                        dItem.getImgResID()));
+            drawerHolder.icon.setImageDrawable(view.getResources().getDrawable(dItem.getImgResID()));
             drawerHolder.ItemName.setText(dItem.getItemName());
+            if(dItem.getItemName()=="Dietas"){
+                drawerHolder.counter.setVisibility(View.VISIBLE);
+                drawerHolder.counter.setText("0");
+            }
  
             return view;
       }
@@ -62,5 +64,6 @@ public class CustomDrawerAdapter extends ArrayAdapter<DrawerItem> {
       private static class DrawerItemHolder {
             TextView ItemName;
             ImageView icon;
+            TextView counter;
       }
 }
