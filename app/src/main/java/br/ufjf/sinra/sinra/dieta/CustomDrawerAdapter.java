@@ -55,6 +55,7 @@ public class CustomDrawerAdapter extends ArrayAdapter<DrawerItem> {
             drawerHolder.ItemName.setText(dItem.getItemName());
             if(dItem.getItemName()=="Dietas"){
                 drawerHolder.counter.setVisibility(View.VISIBLE);
+                drawerHolder.counter.setEnabled(true);
                 drawerHolder.counter.setText("0");
             }
  

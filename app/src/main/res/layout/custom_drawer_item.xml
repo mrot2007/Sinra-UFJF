@@ -52,6 +52,7 @@
                 android:layout_marginLeft="40dp"
                 android:typeface="sans"
                 android:text="0"
+                android:enabled="false"
                 android:visibility="invisible"
                 />
         </LinearLayout>
